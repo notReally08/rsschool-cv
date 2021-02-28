@@ -25,6 +25,51 @@ export class Comments {
         this.dom = new DOM();
         this.ajax = new AsyncAjax();
     }
+
+    async getComments() {
+        return await this.ajax.fetchAjax(`https://jsonplaceholder.typicode.com/posts/${this.postId}/comments`)
+            .then(comments => {
+                // console.log(comments);
+                return comments;
+            })
+            .catch(error => {
+                // console.log(error);
+                return error;
+            });
+
+        // console.log(this.postId, comments);
+    }
+
+    createCommentsModalBlock(comment = false) {
+        let html = [
+            {
+                'domEl': 'div',
+                'class': 'comments__item comment',
+                'childrenElems': [
+                    {
+                        'domEl': 'p',
+                        'class': 'comment__name',
+                        'innerText': comment.name
+                    },
+
+                    {
+                        'domEl': 'p',
+                        'class': 'comment__body',
+                        'innerText': comment.body
+                    },
+
+                    {
+                        'domEl': 'span',
+                        'class': 'comment__user',
+                        'innerText': comment.email
+                    },
+                ]
+            }
+
+        ];
+
+        this.dom.constructorDomTree(html, $('.modal__wrapper'));
+    }
 }
 ```
 
