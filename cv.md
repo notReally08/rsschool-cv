@@ -3,7 +3,14 @@
 * *e-mail*: dasha.pavlovna2014@yandex.ru
 * *telegram*: @df_quimby
 
-I am happy to study frontend, I am fond of practice and I like to understand the topic deeply. I want to be part of a team that works together on a common goal. I prefer friendly and eco-friendly communication. I can quickly learn new technologies to use them. I calmly take criticism of my code, listening to the professional advice of more experienced colleagues.
+I feel like a researcher, very curious one. Since my experience is still just
+beginning, my preferences in technology are quite flexible, THIS MEANS that I
+am open to learning new technologies and constantly immersing myself in those
+that I already know.
+For me, the priority is established communication in the team. I am for positive
+criticism without violating personal boundaries. I myself have great respect for
+the personal boundaries of others. I can manage on my own and I'm not ashamed
+to ask for help when I need it.
 
 **My skill:**
 * HTML, CSS, JS, препроцессоры (sass, less), БЭМ
@@ -16,68 +23,36 @@ I am happy to study frontend, I am fond of practice and I like to understand the
 Code example:
 
 ```javascript
-import {AsyncAjax as AsyncAjax} from './AsyncAjax.js';
-import {DOM as DOM} from './DOM.js';
+import { taskList } from "./components/taskList/taskList";
+import { localStorageInit } from "./localStorage/storage";
+import { getDataFromLocalStorage } from "./localStorage/storage";
 
-export class Comments {
-    constructor(postId) {
-        this.postId = postId;
-        this.dom = new DOM();
-        this.ajax = new AsyncAjax();
-    }
-
-    async getComments() {
-        return await this.ajax.fetchAjax(`https://jsonplaceholder.typicode.com/posts/${this.postId}/comments`)
-            .then(comments => {
-                // console.log(comments);
-                return comments;
-            })
-            .catch(error => {
-                // console.log(error);
-                return error;
-            });
-
-        // console.log(this.postId, comments);
-    }
-
-    createCommentsModalBlock(comment = false) {
-        let html = [
-            {
-                'domEl': 'div',
-                'class': 'comments__item comment',
-                'childrenElems': [
-                    {
-                        'domEl': 'p',
-                        'class': 'comment__name',
-                        'innerText': comment.name
-                    },
-
-                    {
-                        'domEl': 'p',
-                        'class': 'comment__body',
-                        'innerText': comment.body
-                    },
-
-                    {
-                        'domEl': 'span',
-                        'class': 'comment__user',
-                        'innerText': comment.email
-                    },
-                ]
-            }
-
-        ];
-
-        this.dom.constructorDomTree(html, $('.modal__wrapper'));
-    }
+function render() {
+    const container = document.querySelector(".tasks .container");
+    const taskListArray = getDataFromLocalStorage();
+    container.innerHTML = taskListArray.length ? taskList(taskListArray) : "Место для твоих задач";
 }
+
+function init() {
+    localStorageInit();
+    render();
+}
+
+init();
 ```
 
 ---
 **My own projects:**
+Vanilla js:
+[js-posts](http://jsposts.ge-service.by/) [source code](https://bitbucket.org/some_person/jsposts)
 
+React:
 * [learnredux](http://learnredux.ge-service.by/) [source code](https://bitbucket.org/some_person/learnredux)  
-* [rm-app](http://rm-app.ge-service.by/) [source code](https://bitbucket.org/jo_barbera/rm-app)  
+* [rm-app](http://rm-app.ge-service.by/) [source code](https://bitbucket.org/jo_barbera/rm-app)
+
+Markup:
+[http://aod.ge-service.by/](http://aod.ge-service.by/)
+[http://binary.ge-service.by/](http://binary.ge-service.by/)
 
 **Education:**
 * Computer Academy ItStep
