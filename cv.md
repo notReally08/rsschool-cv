@@ -4,7 +4,7 @@
 * *telegram*: @df_quimby
 
 I feel like a researcher, very curious one. Since my experience is still just
-beginning, my preferences in technology are quite flexible, THIS MEANS that I
+beginning, my preferences in technology are quite flexible, this means that I
 am open to learning new technologies and constantly immersing myself in those
 that I already know.
 For me, the priority is established communication in the team. I am for positive
