@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sahitya&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+</head>
+<body>
+  <main class="main">
+    <div class="wrapper">
+      <div class="main-content">
+        <div class="main-content__container">
+          <section class="intro">
+            <div class="intro__avatar">
+              <img class="intro__image" src="./assets/avatar.png" alt="avatar-Thomas">
+            </div>
+            <h1 class="intro__title">
+              Darya Rahatsevich
+            </h1>
+            <p class="intro__profession">Frontend developer</p>
+          </section>
+          <div class="profile">
+            <p class="profile__text">
+              &nbsp;&nbsp;I feel like a researcher, very curious one. Since my experience is still just beginning, my preferences in technology are quite flexible, this means that I am open to learning new technologies and constantly immersing myself in those that I already know.
+              &nbsp;&nbsp;For me, the priority is established communication in the team. I am for positive criticism without violating personal boundaries. I myself have great respect for the personal boundaries of others. I can manage on my own and I'm not ashamed to ask for help when I need it.
+            </p>
+          </div>
+          <section class="projects">
+            <h2 class="projects__title">My own projects:</h2>
+            <p class="projects__subtitle">Vanilla js:</p>
+            <ul class="projects__list list">
+              <li class="list__item"><a href="http://jsposts.ge-service.by/" class="list__link" target="_blank">js-posts</a><a href="https://bitbucket.org/some_person/jsposts" class="list__link list__link_s">source code</a></li>
+            </ul>
+            <p class="projects__subtitle">React:</p>
+            <ul class="projects__list list">
+              <li class="list__item"><a href="http://learnredux.ge-service.by/" class="list__link" target="_blank">learnredux</a><a href="https://bitbucket.org/some_person/learnredux/" target="_blank" class="list__link list__link_s">source code</a></li>
+              <li class="list__item"><a href="http://rm-app.ge-service.by/" class="list__link" target="_blank">rm-app</a><a href="https://bitbucket.org/jo_barbera/rm-app/" class="list__link list__link_s" target="_blank">source code</a></li>
+            </ul>
+            <p class="projects__subtitle">Markup:</p>
+            <ul class="projects__list list">
+              <li class="list__item"><a href="http://aod.ge-service.by/" class="list__link" target="_blank">http://aod.ge-service.by/</a></li>
+              <li class="list__item"><a href="http://binary.ge-service.by/" class="list__link" target="_blank">http://binary.ge-service.by/</a></li>
+              <li class="list__item"><a href="http://odijo.ge-service.by//" class="list__link" target="_blank">http://odijo.ge-service.by/</a></li>
+              <li class="list__item"><a href="http://misma.ge-service.by/" class="list__link" target="_blank">http://misma.ge-service.by/</a></li>
+            </ul>
+          </section>
+          <section class="education">
+            <h2 class="education__title">
+              Education:
+            </h2>
+            <ul class="edication__list list list_b">
+              <li class="list__item">Computer Academy ItStep</li>
+              <li class="list__item">Udemy (HTML, CSS)</li>
+              <li class="list__item">Self-study on documentation and courses from youtube</li>
+            </ul>
+          </section>
+          <div class="code-example">
+            <div class="code-example__wrapper">
+              <h4 class="code-example__title">
+                Code example:
+              </h4>
+              <div class="code-example__code">
+                <pre>
+import { taskList } from "./components/taskList/taskList";
+import { localStorageInit } from "./localStorage/storage";
+import { getDataFromLocalStorage } from "./localStorage/storage";
+
+function render() {
+    const container = document.querySelector(".tasks .container");
+    const taskListArray = getDataFromLocalStorage();
+    container.innerHTML = taskListArray.length ? taskList(taskListArray) : "";
+}
+
+function init() {
+    localStorageInit();
+    render();
+}
+
+init();
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="side-bar">
+        <div class="side-bar__container">
+          <div class="contacts">
+            <p class="contacts__title">Contacts:</p>
+            <ul class="contacts__list">
+              <li class="contacts__item">
+                <a href="#" class="contacts__link icon-tg"></a>
+              </li>
+              <li class="contacts__item">
+                <a href="#" class="contacts__link icon-email"></a>
+              </li>
+            </ul>
+          </div>
+          <section class="skills">
+            <h4 class="skills__title">My skills:</h4>
+              <ul class="skills__list list list_b">
+                <li class="list__item">HTML, CSS, JS, preprocessors (sass, less),  BEM</li>
+                <li class="list__item">ReactJS, Redux, Redux-Saga</li>
+                <li class="list__item">webpack, gulp</li>
+                <li class="list__item">Git</li>
+                <li class="list__item">I use VSCode, WebStorm</li>
+              </ul>
+          </section>
+          <section class="lang">
+            <h3 class="lang__title">English level:</h3>
+            <p class="lang__text">Advanced</p>
+          </section>
+        </div>  
+      </aside>
+    </div>  
+  </main>
+  
+</body>
+</html>
